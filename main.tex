@@ -1,7 +1,10 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb} % 数学公式
+\usepackage{graphicx}          % 插入图片
+\usepackage{hyperref}          % 超链接
 
-\title{My First AI-assisted LaTeX Paper}
+\title{Cursor + LaTeX Test Paper}
 \author{Yiwen Ding}
 \date{\today}
 
@@ -11,8 +14,50 @@
 
 \section{Introduction}
 
-This is my first LaTeX paper written using Cursor and managed by Git.
+This is a test LaTeX document to check Cursor's AI + Git + PDF workflow.
 
-This is a test.
+Here is some text for testing SyncTeX.  
+You should be able to double-click this line in the PDF and jump back to the LaTeX source.
+
+\section{Mathematics Test}
+
+Here is a simple formula:
+
+\[
+E = mc^2
+\]
+
+And a more complex one:
+
+\[
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\]
+
+\section{Figures Test}
+
+Below is a sample figure (replace with a real image if needed):
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image} % Cursor + LaTeX Workshop 自带示例图片
+    \caption{Example figure for testing PDF preview.}
+\end{figure}
+
+\section{Hyperlinks Test}
+
+You can test hyperlinks in PDF:
+
+\href{https://github.com/YiwenDing-Logic}{My GitHub Repository}
+
+\section{Conclusion}
+
+This document tests:
+
+\begin{itemize}
+    \item Cursor AI editing
+    \item PDF auto-update
+    \item SyncTeX double-click navigation
+    \item Git version management
+\end{itemize}
 
 \end{document}
