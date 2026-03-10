@@ -3,6 +3,8 @@
 \usepackage{amsmath, amssymb} % 数学公式
 \usepackage{graphicx}          % 插入图片
 \usepackage{hyperref}          % 超链接
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
 
 \title{Cursor + LaTeX Test Paper}
 \author{Yiwen Ding}
@@ -14,13 +16,31 @@
 
 \section{Introduction}
 
-This is a test LaTeX document to check Cursor's AI + Git + PDF workflow.
+This LaTeX document serves as a navigation test to evaluate Cursor's AI, Git, and PDF workflow integration.
 
-Here is some text for testing SyncTeX.  
+Here is some text for testing SyncTeX.  this paper study the navigation of the PDF file.
 You should be able to double-click this line in the PDF and jump back to the LaTeX source.
 
-\section{Mathematics Test}
+% Commutative diagram of a pullback
+\begin{center}
+\begin{tikzpicture}[>=angle 90, shorten >=2pt, node distance=2cm]
+  \matrix[matrix of math nodes,row sep=2em,column sep=2em,ampersand replacement=\&] (m) {
+    P \& X \\
+    Y \& Z \\};
+  \path[->]
+    (m-1-1) edge (m-1-2)
+    (m-1-1) edge (m-2-1)
+    (m-1-2) edge node [right] {$f$} (m-2-2)
+    (m-2-1) edge node [below] {$g$} (m-2-2);
+  \draw (m-1-1) -- (m-2-2);
+\end{tikzpicture}
 
+\emph{Commutative diagram of a pullback.}
+\end{center}
+
+
+\section{Mathematics Test}
+I am a man. this is a test.
 Here is a simple formula:
 
 \[
@@ -39,7 +59,7 @@ Below is a sample figure (replace with a real image if needed):
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{example-image} % Cursor + LaTeX Workshop 自带示例图片
+    \includegraphics[width=0.3\textwidth]{example-image} % Cursor + LaTeX Workshop 自带示例图片
     \caption{Example figure for testing PDF preview.}
 \end{figure}
 
@@ -50,6 +70,28 @@ You can test hyperlinks in PDF:
 \href{https://github.com/YiwenDing-Logic}{My GitHub Repository}
 
 \section{Conclusion}
+
+
+\subsection{Definition of Quantale-Enriched Category}
+
+A \emph{quantale-enriched category} (also known as a $\mathcal{V}$-category, where $\mathcal{V}$ is a quantale) generalizes the notion of a category by enriching the hom-sets with values in a quantale. 
+
+Let $\mathcal{V} = (V, \leq, \otimes, k)$ be a \emph{quantale}; that is, $V$ is a complete lattice with monoidal structure $(\otimes, k)$ such that for all $a \in V$, the maps $a \otimes -$ and $- \otimes a$ preserve all joins.
+
+A \textbf{quantale-enriched category} $\mathcal{C}$ consists of:
+\begin{itemize}
+    \item A class of objects, $\mathrm{Ob}(\mathcal{C})$.
+    \item For each pair of objects $x, y \in \mathrm{Ob}(\mathcal{C})$, a ``hom-object'' $\mathcal{C}(x, y) \in V$.
+    \item For each $x \in \mathrm{Ob}(\mathcal{C})$, an element $k \leq \mathcal{C}(x, x)$ (identity axiom).
+    \item For each $x, y, z \in \mathrm{Ob}(\mathcal{C})$, 
+    \[\mathcal{C}(x, y) \otimes \mathcal{C}(y, z) \leq \mathcal{C}(x, z)\]
+    (composition axiom).
+\end{itemize}
+
+If $\mathcal{V}$ is the Boolean quantale $\{\bot, \top\}$ with $\otimes = \wedge$ (meet), we recover the notion of a preordered set. When $\mathcal{V}$ is $([0, \infty], \geq, +, 0)$ (the quantale of extended nonnegative reals with addition and reverse order), we get generalized metric spaces.
+
+
+
 
 This document tests:
 
